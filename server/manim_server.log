@@ -2049,3 +2049,9 @@
 2025-03-05 22:51:54,257 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/opennote-ai/.venv/lib/python3.13/site-packages/google/api/logging_pb2.py', reloading
 2025-03-05 22:51:54,258 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/opennote-ai/.venv/lib/python3.13/site-packages/google/api/visibility_pb2.py', reloading
 2025-03-05 22:51:54,429 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-06 12:44:49,947 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-06 12:45:01,019 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-06 12:50:55,467 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-06 12:52:35,953 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-06 12:54:42,091 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-06 12:54:48,290 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
