@@ -219,6 +219,15 @@ def serve_video(filename):
     videos_dir = ensure_videos_directory()
     return send_from_directory(videos_dir, filename)
 
+def cleanup_temp_dir(temp_dir):
+    """Safely remove a temporary directory and all its contents."""
+    if temp_dir and os.path.exists(temp_dir):
+        try:
+            shutil.rmtree(temp_dir)
+            logger.info(f"Cleaned up temporary directory: {temp_dir}")
+        except Exception as e:
+            logger.error(f"Error cleaning up temporary directory {temp_dir}: {str(e)}")
+
 def run_manim_code(code, filename=None):
     """Run the generated Manim code and return the result and any errors."""
     # Create videos directory if it doesn't exist
@@ -257,7 +266,7 @@ def run_manim_code(code, filename=None):
 
     # Create a python file with the generated code
     file_path = os.path.join(temp_dir, "manim_animation.py")
-    with open(file_path, "w") as f:
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(code)
 
     logger.info(f"Saved generated code to {file_path}")
@@ -278,11 +287,12 @@ def run_manim_code(code, filename=None):
     )
     stdout, stderr = process.communicate()
 
-    stdout_text = stdout.decode('utf-8')
-    stderr_text = stderr.decode('utf-8') if stderr else ""
+    stdout_text = stdout.decode("utf-8", errors="replace")
+    stderr_text = stderr.decode("utf-8", errors="replace") if stderr else ""
 
     # Write any errors to the log file
-    with open(error_log_path, "w") as f:
+    with open(error_log_path, "w", encoding="utf-8") as f:
+
         if stderr:
             f.write(stderr_text)
 
@@ -343,6 +353,7 @@ def run_manim_code(code, filename=None):
                 if "video_path" in result:
                     break
 
+    cleanup_temp_dir(temp_dir)
     return result
 
 def check_text_overlap_issues(code):

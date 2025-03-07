@@ -8,5 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
-
+venv/
 .env
+
+# Videos Folder
+videos/
+
+# Log files
+manim_server.log
