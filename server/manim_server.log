@@ -2055,3 +2055,196 @@
 2025-03-06 12:52:35,953 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
 2025-03-06 12:54:42,091 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
 2025-03-06 12:54:48,290 - __main__ - ERROR - Manim is not installed or not in PATH. Please install Manim Community Edition.
+2025-03-07 12:36:08,919 - __main__ - INFO - Manim is installed and available
+2025-03-07 12:36:08,930 - werkzeug - WARNING -  * Debugger is active!
+2025-03-07 12:36:08,930 - werkzeug - INFO -  * Debugger PIN: 323-514-824
+2025-03-07 12:38:37,663 - __main__ - INFO - Manim is installed and available
+2025-03-07 12:38:37,677 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-07 12:38:37,677 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-07 12:38:37,682 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-07 12:38:39,137 - __main__ - INFO - Manim is installed and available
+2025-03-07 12:38:39,147 - werkzeug - WARNING -  * Debugger is active!
+2025-03-07 12:38:39,148 - werkzeug - INFO -  * Debugger PIN: 179-730-786
+2025-03-07 12:40:02,014 - __main__ - ERROR - No query provided
+2025-03-07 12:40:02,015 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:40:02] "[31m[1mPOST /query HTTP/1.1[0m" 400 -
+2025-03-07 12:40:08,028 - __main__ - INFO - Received query: Why does a normal function resemble a bell shaped curve?
+2025-03-07 12:40:08,028 - __main__ - INFO - Requested filename: normal_function
+2025-03-07 12:40:08,028 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:40:35,042 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:40:35,044 - __main__ - INFO - Created temporary directory: /tmp/tmprc1pfnqn
+2025-03-07 12:40:35,044 - __main__ - INFO - Saved generated code to /tmp/tmprc1pfnqn/manim_animation.py
+2025-03-07 12:40:35,045 - __main__ - INFO - Executing command: cd /tmp/tmprc1pfnqn && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:40:36,131 - __main__ - INFO - Manim execution failed
+2025-03-07 12:40:36,131 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmprc1pfnqn
+2025-03-07 12:40:36,131 - __main__ - WARNING - Execution failed (attempt 1/5)
+2025-03-07 12:40:36,131 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:41:06,973 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:41:06,973 - __main__ - INFO - Created temporary directory: /tmp/tmpr99_x8vs
+2025-03-07 12:41:06,974 - __main__ - INFO - Saved generated code to /tmp/tmpr99_x8vs/manim_animation.py
+2025-03-07 12:41:06,974 - __main__ - INFO - Executing command: cd /tmp/tmpr99_x8vs && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:41:08,258 - __main__ - INFO - Manim execution failed
+2025-03-07 12:41:08,260 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpr99_x8vs
+2025-03-07 12:41:08,260 - __main__ - WARNING - Execution failed (attempt 2/5)
+2025-03-07 12:41:08,261 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:41:31,351 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:41:31,352 - __main__ - INFO - Created temporary directory: /tmp/tmpf0_boe7_
+2025-03-07 12:41:31,352 - __main__ - INFO - Saved generated code to /tmp/tmpf0_boe7_/manim_animation.py
+2025-03-07 12:41:31,353 - __main__ - INFO - Executing command: cd /tmp/tmpf0_boe7_ && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:41:39,190 - __main__ - INFO - Manim execution failed
+2025-03-07 12:41:39,192 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpf0_boe7_
+2025-03-07 12:41:39,193 - __main__ - WARNING - Execution failed (attempt 3/5)
+2025-03-07 12:41:39,193 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:42:04,298 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:42:04,299 - __main__ - INFO - Created temporary directory: /tmp/tmpdushwaa2
+2025-03-07 12:42:04,300 - __main__ - INFO - Saved generated code to /tmp/tmpdushwaa2/manim_animation.py
+2025-03-07 12:42:04,300 - __main__ - INFO - Executing command: cd /tmp/tmpdushwaa2 && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:42:12,890 - __main__ - INFO - Manim execution failed
+2025-03-07 12:42:12,891 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpdushwaa2
+2025-03-07 12:42:12,891 - __main__ - WARNING - Execution failed (attempt 4/5)
+2025-03-07 12:42:12,891 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:42:34,222 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:42:34,222 - __main__ - INFO - Created temporary directory: /tmp/tmp2zaksvhc
+2025-03-07 12:42:34,223 - __main__ - INFO - Saved generated code to /tmp/tmp2zaksvhc/manim_animation.py
+2025-03-07 12:42:34,223 - __main__ - INFO - Executing command: cd /tmp/tmp2zaksvhc && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:42:34,920 - __main__ - INFO - Manim execution failed
+2025-03-07 12:42:34,925 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp2zaksvhc
+2025-03-07 12:42:34,925 - __main__ - WARNING - Execution failed (attempt 5/5)
+2025-03-07 12:42:34,925 - __main__ - ERROR - Max retries (5) reached, giving up
+2025-03-07 12:42:34,925 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:42:34] "POST /query HTTP/1.1" 200 -
+2025-03-07 12:43:01,668 - __main__ - INFO - Received query: Why does a normal function resemble a bell shaped curve?
+2025-03-07 12:43:01,668 - __main__ - INFO - Requested filename: normal_function
+2025-03-07 12:43:01,669 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:43:24,172 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:43:24,173 - __main__ - INFO - Created temporary directory: /tmp/tmpt2clqqh7
+2025-03-07 12:43:24,173 - __main__ - INFO - Saved generated code to /tmp/tmpt2clqqh7/manim_animation.py
+2025-03-07 12:43:24,173 - __main__ - INFO - Executing command: cd /tmp/tmpt2clqqh7 && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:43:39,127 - __main__ - INFO - Manim execution failed
+2025-03-07 12:43:39,127 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpt2clqqh7
+2025-03-07 12:43:39,127 - __main__ - WARNING - Execution failed (attempt 1/5)
+2025-03-07 12:43:39,128 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:44:15,883 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:44:15,884 - __main__ - INFO - External packages detected in code: scipy
+2025-03-07 12:44:16,026 - __main__ - INFO - Created temporary directory: /tmp/tmp_rk66ql7
+2025-03-07 12:44:16,027 - __main__ - INFO - Saved generated code to /tmp/tmp_rk66ql7/manim_animation.py
+2025-03-07 12:44:16,027 - __main__ - INFO - Executing command: cd /tmp/tmp_rk66ql7 && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:44:26,157 - __main__ - INFO - Manim execution failed
+2025-03-07 12:44:26,158 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp_rk66ql7
+2025-03-07 12:44:26,158 - __main__ - WARNING - Execution failed (attempt 2/5)
+2025-03-07 12:44:26,158 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:44:45,738 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:44:45,739 - __main__ - INFO - Created temporary directory: /tmp/tmpdsdk446o
+2025-03-07 12:44:45,740 - __main__ - INFO - Saved generated code to /tmp/tmpdsdk446o/manim_animation.py
+2025-03-07 12:44:45,740 - __main__ - INFO - Executing command: cd /tmp/tmpdsdk446o && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:44:48,392 - __main__ - INFO - Manim execution failed
+2025-03-07 12:44:48,393 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpdsdk446o
+2025-03-07 12:44:48,393 - __main__ - WARNING - Execution failed (attempt 3/5)
+2025-03-07 12:44:48,393 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:45:08,848 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:45:08,849 - __main__ - INFO - Created temporary directory: /tmp/tmpa5o6g_rb
+2025-03-07 12:45:08,850 - __main__ - INFO - Saved generated code to /tmp/tmpa5o6g_rb/manim_animation.py
+2025-03-07 12:45:08,851 - __main__ - INFO - Executing command: cd /tmp/tmpa5o6g_rb && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:45:13,618 - __main__ - INFO - Manim execution failed
+2025-03-07 12:45:13,618 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpa5o6g_rb
+2025-03-07 12:45:13,618 - __main__ - WARNING - Execution failed (attempt 4/5)
+2025-03-07 12:45:13,618 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:45:40,181 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:45:40,181 - __main__ - INFO - Created temporary directory: /tmp/tmpyg514_ze
+2025-03-07 12:45:40,182 - __main__ - INFO - Saved generated code to /tmp/tmpyg514_ze/manim_animation.py
+2025-03-07 12:45:40,182 - __main__ - INFO - Executing command: cd /tmp/tmpyg514_ze && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:45:47,255 - __main__ - INFO - Manim execution failed
+2025-03-07 12:45:47,256 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpyg514_ze
+2025-03-07 12:45:47,256 - __main__ - WARNING - Execution failed (attempt 5/5)
+2025-03-07 12:45:47,256 - __main__ - ERROR - Max retries (5) reached, giving up
+2025-03-07 12:45:47,257 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:45:47] "POST /query HTTP/1.1" 200 -
+2025-03-07 12:47:06,505 - __main__ - INFO - Received query: Plot a normal function against different values of x and y
+2025-03-07 12:47:06,506 - __main__ - INFO - Requested filename: normal_function
+2025-03-07 12:47:06,506 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:47:30,983 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:47:30,984 - __main__ - INFO - Created temporary directory: /tmp/tmpv03pfc7u
+2025-03-07 12:47:30,985 - __main__ - INFO - Saved generated code to /tmp/tmpv03pfc7u/manim_animation.py
+2025-03-07 12:47:30,985 - __main__ - INFO - Executing command: cd /tmp/tmpv03pfc7u && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:47:34,839 - __main__ - INFO - Manim execution failed
+2025-03-07 12:47:34,839 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpv03pfc7u
+2025-03-07 12:47:34,839 - __main__ - WARNING - Execution failed (attempt 1/5)
+2025-03-07 12:47:34,839 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:47:54,506 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:47:54,507 - __main__ - INFO - External packages detected in code: scipy
+2025-03-07 12:47:54,507 - __main__ - INFO - Created temporary directory: /tmp/tmps2j7wd2w
+2025-03-07 12:47:54,508 - __main__ - INFO - Saved generated code to /tmp/tmps2j7wd2w/manim_animation.py
+2025-03-07 12:47:54,508 - __main__ - INFO - Executing command: cd /tmp/tmps2j7wd2w && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:47:55,480 - __main__ - INFO - Manim execution failed
+2025-03-07 12:47:55,480 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmps2j7wd2w
+2025-03-07 12:47:55,481 - __main__ - WARNING - Execution failed (attempt 2/5)
+2025-03-07 12:47:55,481 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:48:16,038 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:48:16,039 - __main__ - INFO - Created temporary directory: /tmp/tmps0zvfzy_
+2025-03-07 12:48:16,040 - __main__ - INFO - Saved generated code to /tmp/tmps0zvfzy_/manim_animation.py
+2025-03-07 12:48:16,040 - __main__ - INFO - Executing command: cd /tmp/tmps0zvfzy_ && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:48:21,351 - __main__ - INFO - Manim execution failed
+2025-03-07 12:48:21,352 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmps0zvfzy_
+2025-03-07 12:48:21,352 - __main__ - WARNING - Execution failed (attempt 3/5)
+2025-03-07 12:48:21,352 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:48:48,781 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:48:48,782 - __main__ - INFO - External packages detected in code: scipy
+2025-03-07 12:48:48,782 - __main__ - INFO - Created temporary directory: /tmp/tmp0li3xwm3
+2025-03-07 12:48:48,783 - __main__ - INFO - Saved generated code to /tmp/tmp0li3xwm3/manim_animation.py
+2025-03-07 12:48:48,783 - __main__ - INFO - Executing command: cd /tmp/tmp0li3xwm3 && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:49:17,568 - __main__ - INFO - Manim execution failed
+2025-03-07 12:49:17,569 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp0li3xwm3
+2025-03-07 12:49:17,569 - __main__ - WARNING - Execution failed (attempt 4/5)
+2025-03-07 12:49:17,569 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:49:41,239 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:49:41,240 - __main__ - INFO - Created temporary directory: /tmp/tmpn2qoelno
+2025-03-07 12:49:41,241 - __main__ - INFO - Saved generated code to /tmp/tmpn2qoelno/manim_animation.py
+2025-03-07 12:49:41,241 - __main__ - INFO - Executing command: cd /tmp/tmpn2qoelno && python -m manim manim_animation.py Scene -qm -o normal_function
+2025-03-07 12:49:43,020 - __main__ - INFO - Manim execution failed
+2025-03-07 12:49:43,022 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpn2qoelno
+2025-03-07 12:49:43,022 - __main__ - WARNING - Execution failed (attempt 5/5)
+2025-03-07 12:49:43,022 - __main__ - ERROR - Max retries (5) reached, giving up
+2025-03-07 12:49:43,023 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:49:43] "POST /query HTTP/1.1" 200 -
+2025-03-07 12:50:32,005 - __main__ - INFO - Received query: Plot a quadratic function and explain it
+2025-03-07 12:50:32,005 - __main__ - INFO - Requested filename: quadratic_function
+2025-03-07 12:50:32,005 - __main__ - INFO - Sending prompt to Gemini API: initial request
+2025-03-07 12:50:50,455 - __main__ - INFO - Received code from Gemini API
+2025-03-07 12:50:50,455 - __main__ - INFO - Created temporary directory: /tmp/tmpbi4myu5s
+2025-03-07 12:50:50,456 - __main__ - INFO - Saved generated code to /tmp/tmpbi4myu5s/manim_animation.py
+2025-03-07 12:50:50,456 - __main__ - INFO - Executing command: cd /tmp/tmpbi4myu5s && python -m manim manim_animation.py Scene -qm -o quadratic_function
+2025-03-07 12:51:47,537 - __main__ - INFO - Manim execution successful
+2025-03-07 12:51:47,539 - __main__ - INFO - Copied video to /home/ayush/coding/opennote-ai/server/videos/quadratic_function.mp4
+2025-03-07 12:51:47,540 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpbi4myu5s
+2025-03-07 12:51:47,541 - __main__ - INFO - Manim code executed successfully
+2025-03-07 12:51:47,541 - __main__ - INFO - Sending code to review model for text overlap check
+2025-03-07 12:52:04,878 - __main__ - INFO - Potential text issues found and fixed
+2025-03-07 12:52:04,879 - __main__ - INFO - Text overlap issues found (attempt 1/3)
+2025-03-07 12:52:04,879 - __main__ - INFO - Created temporary directory: /tmp/tmp9d6ghco3
+2025-03-07 12:52:04,880 - __main__ - INFO - Saved generated code to /tmp/tmp9d6ghco3/manim_animation.py
+2025-03-07 12:52:04,881 - __main__ - INFO - Executing command: cd /tmp/tmp9d6ghco3 && python -m manim manim_animation.py Scene -qm -o quadratic_function
+2025-03-07 12:52:56,966 - __main__ - INFO - Manim execution successful
+2025-03-07 12:52:56,973 - __main__ - INFO - Copied video to /home/ayush/coding/opennote-ai/server/videos/quadratic_function.mp4
+2025-03-07 12:52:56,974 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp9d6ghco3
+2025-03-07 12:52:56,974 - __main__ - INFO - Manim code executed successfully
+2025-03-07 12:52:56,974 - __main__ - INFO - Sending code to review model for text overlap check
+2025-03-07 12:53:14,508 - __main__ - INFO - Potential text issues found and fixed
+2025-03-07 12:53:14,508 - __main__ - INFO - Text overlap issues found (attempt 2/3)
+2025-03-07 12:53:14,510 - __main__ - INFO - Created temporary directory: /tmp/tmp61nb2pvb
+2025-03-07 12:53:14,510 - __main__ - INFO - Saved generated code to /tmp/tmp61nb2pvb/manim_animation.py
+2025-03-07 12:53:14,511 - __main__ - INFO - Executing command: cd /tmp/tmp61nb2pvb && python -m manim manim_animation.py Scene -qm -o quadratic_function
+2025-03-07 12:54:02,395 - __main__ - INFO - Manim execution successful
+2025-03-07 12:54:02,400 - __main__ - INFO - Copied video to /home/ayush/coding/opennote-ai/server/videos/quadratic_function.mp4
+2025-03-07 12:54:02,401 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp61nb2pvb
+2025-03-07 12:54:02,401 - __main__ - INFO - Manim code executed successfully
+2025-03-07 12:54:02,401 - __main__ - INFO - Sending code to review model for text overlap check
+2025-03-07 12:54:22,090 - __main__ - INFO - Potential text issues found and fixed
+2025-03-07 12:54:22,090 - __main__ - INFO - Text overlap issues found (attempt 3/3)
+2025-03-07 12:54:22,091 - __main__ - INFO - Created temporary directory: /tmp/tmpctma4btu
+2025-03-07 12:54:22,092 - __main__ - INFO - Saved generated code to /tmp/tmpctma4btu/manim_animation.py
+2025-03-07 12:54:22,092 - __main__ - INFO - Executing command: cd /tmp/tmpctma4btu && python -m manim manim_animation.py Scene -qm -o quadratic_function
+2025-03-07 12:55:11,661 - __main__ - INFO - Manim execution successful
+2025-03-07 12:55:11,663 - __main__ - INFO - Copied video to /home/ayush/coding/opennote-ai/server/videos/quadratic_function.mp4
+2025-03-07 12:55:11,664 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpctma4btu
+2025-03-07 12:55:11,664 - __main__ - INFO - Manim code executed successfully
+2025-03-07 12:55:11,664 - __main__ - INFO - Sending code to review model for text overlap check
+2025-03-07 12:55:27,159 - __main__ - INFO - Potential text issues found and fixed
+2025-03-07 12:55:27,160 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:55:27] "POST /query HTTP/1.1" 200 -
+2025-03-07 12:55:47,370 - werkzeug - INFO - 127.0.0.1 - - [07/Mar/2025 12:55:47] "GET /videos/quadratic_function.mp4 HTTP/1.1" 200 -

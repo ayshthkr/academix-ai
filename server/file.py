@@ -10,9 +10,6 @@ import shutil
 from flask import Flask, request, jsonify, send_from_directory
 import google.generativeai as genai
 from dotenv import load_dotenv
-from manim import *
-
-
 
 # Load environment variables from .env file
 load_dotenv()
@@ -43,9 +40,6 @@ review_model = genai.GenerativeModel('gemini-2.0-flash')  # Smaller model for co
 
 # Maximum number of retries for code generation
 MAX_RETRIES = 5
-
-
-
 
 def extract_python_code(response_text):
     """Extract Python code from Gemini API response."""
@@ -211,8 +205,6 @@ def install_missing_packages(packages):
 
     return success, message
 
-
-
 def ensure_videos_directory():
     """Ensure the videos directory exists."""
     videos_dir = os.path.join(os.getcwd(), "videos")
@@ -221,32 +213,20 @@ def ensure_videos_directory():
         logger.info(f"Created videos directory at {videos_dir}")
     return videos_dir
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/videos/<path:filename>')
 def serve_video(filename):
     """Serve video files from the videos directory."""
     videos_dir = ensure_videos_directory()
     return send_from_directory(videos_dir, filename)
+
+def cleanup_temp_dir(temp_dir):
+    """Safely remove a temporary directory and all its contents."""
+    if temp_dir and os.path.exists(temp_dir):
+        try:
+            shutil.rmtree(temp_dir)
+            logger.info(f"Cleaned up temporary directory: {temp_dir}")
+        except Exception as e:
+            logger.error(f"Error cleaning up temporary directory {temp_dir}: {str(e)}")
 
 def run_manim_code(code, filename=None):
     """Run the generated Manim code and return the result and any errors."""
@@ -373,6 +353,7 @@ def run_manim_code(code, filename=None):
                 if "video_path" in result:
                     break
 
+    cleanup_temp_dir(temp_dir)
     return result
 
 def check_text_overlap_issues(code):
@@ -428,36 +409,6 @@ def check_text_overlap_issues(code):
         logger.error(f"Error during text overlap check: {str(e)}")
         return False, code, None
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @app.route('/query', methods=['POST'])
 def process_query():
     """Process a query to generate and run Manim code."""
@@ -493,14 +444,13 @@ def process_query():
             has_overlap_issues, fixed_code, issues_found = check_text_overlap_issues(code)
 
             if has_overlap_issues and overlap_retry_count < MAX_OVERLAP_RETRIES:
-                # TODO:REMOVE the previous if found
                 logger.info(f"Text overlap issues found (attempt {overlap_retry_count+1}/{MAX_OVERLAP_RETRIES})")
                 code = fixed_code
                 overlap_retry_count += 1
                 # Retry with the fixed code
                 continue
             else:
-               
+                # Either no issues or max overlap retries reached
                 break
 
         retry_count += 1
@@ -541,19 +491,6 @@ def process_query():
         }
 
     return jsonify(response)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     # Check if Manim is installed
