@@ -1,0 +1,51 @@
+export const exampleClasses = [
+  {
+    title: "Introduction to Machine Learning",
+    description: "A comprehensive course covering the fundamentals of machine learning, including supervised and unsupervised learning algorithms, model evaluation, and practical applications.",
+    objectives: "1. Understand the core concepts of machine learning\n2. Implement basic ML algorithms from scratch\n3. Evaluate and compare model performance\n4. Apply ML techniques to real-world problems",
+    duration: "12",
+    targetAudience: "Computer Science undergraduates with basic programming knowledge",
+  },
+  {
+    title: "Web Development Bootcamp",
+    description: "An intensive hands-on course teaching modern web development techniques using HTML, CSS, JavaScript, and popular frameworks.",
+    objectives: "1. Build responsive websites using HTML5 and CSS3\n2. Create interactive web applications with JavaScript\n3. Implement server-side functionality\n4. Deploy and maintain web applications",
+    duration: "8",
+    targetAudience: "Beginners with interest in web development or career changers",
+  },
+  {
+    title: "Discrete Mathematics",
+    description: "An essential course for computer science students covering topics such as logic, set theory, combinatorics, graph theory, and algorithms.",
+    objectives: "1. Understand the principles of discrete mathematics\n2. Apply logic and set theory to solve problems\n3. Analyze and design algorithms\n4. Explore combinatorics and graph theory",
+    duration: "10",
+    targetAudience: "Computer Science undergraduates",
+  },
+  {
+    title: "Data Structures and Algorithms",
+    description: "A fundamental course focusing on the design, implementation, and analysis of data structures and algorithms.",
+    objectives: "1. Understand various data structures and their applications\n2. Implement algorithms for sorting, searching, and graph traversal\n3. Analyze the time and space complexity of algorithms\n4. Solve complex computational problems",
+    duration: "14",
+    targetAudience: "Computer Science students with basic programming knowledge",
+  },
+  {
+    title: "Calculus I",
+    description: "An introductory course in calculus covering limits, derivatives, integrals, and their applications.",
+    objectives: "1. Understand the concept of limits and continuity\n2. Differentiate functions and apply derivatives\n3. Integrate functions and apply integrals\n4. Solve real-world problems using calculus",
+    duration: "12",
+    targetAudience: "Mathematics and Engineering undergraduates",
+  },
+  {
+    title: "Linear Algebra",
+    description: "A course covering vector spaces, linear transformations, matrices, and systems of linear equations.",
+    objectives: "1. Understand vector spaces and linear transformations\n2. Perform matrix operations and solve systems of linear equations\n3. Apply eigenvalues and eigenvectors\n4. Explore applications of linear algebra in computer science",
+    duration: "10",
+    targetAudience: "Mathematics and Computer Science students",
+  },
+  {
+    title: "Probability and Statistics",
+    description: "An introductory course covering probability theory, random variables, distributions, and statistical inference.",
+    objectives: "1. Understand the basic principles of probability theory\n2. Analyze random variables and their distributions\n3. Perform statistical inference and hypothesis testing\n4. Apply probability and statistics to real-world problems",
+    duration: "10",
+    targetAudience: "Mathematics, Engineering, and Computer Science students",
+  },
+];

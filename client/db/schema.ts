@@ -6,7 +6,8 @@ import {
   timestamp,
   json,
   uuid,
-  boolean,
+  text,
+  integer,
 } from "drizzle-orm/pg-core";
 
 export const user = pgTable("User", {
@@ -30,14 +31,35 @@ export type Chat = Omit<InferSelectModel<typeof chat>, "messages"> & {
   messages: Array<Message>;
 };
 
-export const reservation = pgTable("Reservation", {
-  id: uuid("id").primaryKey().notNull().defaultRandom(),
-  createdAt: timestamp("createdAt").notNull(),
-  details: json("details").notNull(),
-  hasCompletedPayment: boolean("hasCompletedPayment").notNull().default(false),
+// Class schema for storing course information
+export const class_ = pgTable("Class", {
+  // Change from UUID to memorable ID format (xxx-xxxx)
+  id: varchar("id", { length: 8 }).primaryKey().notNull(),
+  title: varchar("title", { length: 255 }).notNull(),
+  description: text("description"),
+  objectives: text("objectives"),
+  duration: integer("duration").notNull(),
+  targetAudience: varchar("targetAudience", { length: 255 }),
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow(),
   userId: uuid("userId")
     .notNull()
     .references(() => user.id),
 });
 
-export type Reservation = InferSelectModel<typeof reservation>;
+export type Class = InferSelectModel<typeof class_>;
+
+// WeekPlan schema for storing week-by-week content
+export const weekPlan = pgTable("WeekPlan", {
+  id: uuid("id").primaryKey().notNull().defaultRandom(),
+  classId: varchar("classId", { length: 8 })
+    .notNull()
+    .references(() => class_.id, { onDelete: "cascade" }),
+  weekNumber: integer("weekNumber").notNull(),
+  title: varchar("title", { length: 255 }).notNull(),
+  topics: json("topics").notNull(), // Change from content to topics JSON array
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+  updatedAt: timestamp("updatedAt").notNull().defaultNow(),
+});
+
+export type WeekPlan = InferSelectModel<typeof weekPlan>;

@@ -213,10 +213,74 @@ def ensure_videos_directory():
         logger.info(f"Created videos directory at {videos_dir}")
     return videos_dir
 
+def initialize_progress_file(filename):
+    """Create a progress tracking file for the video generation process."""
+    videos_dir = ensure_videos_directory()
+    progress_file_path = os.path.join(videos_dir, f"{filename}.txt")
+
+    # Create the progress file with initial information
+    with open(progress_file_path, "w", encoding="utf-8") as f:
+        f.write(f"Video generation started at {time.strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write("Initializing Manim code generation...\n")
+
+    logger.info(f"Created progress file at {progress_file_path}")
+    return progress_file_path
+
+def update_progress_file(progress_file_path, message):
+    """Update the progress file with new information."""
+    if progress_file_path and os.path.exists(progress_file_path):
+        with open(progress_file_path, "a", encoding="utf-8") as f:
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+            f.write(f"[{timestamp}] {message}\n")
+        logger.info(f"Updated progress file: {message}")
+    else:
+        logger.warning(f"Could not update progress file (not found): {progress_file_path}")
+
+def finalize_progress_file(progress_file_path, success, error_message=None):
+    """Finalize the progress file with success or error information."""
+    if progress_file_path and os.path.exists(progress_file_path):
+        with open(progress_file_path, "a", encoding="utf-8") as f:
+            timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
+            if success:
+                f.write(f"[{timestamp}] Video generation completed successfully.\n")
+                f.write("This file will be replaced with the video file.\n")
+            else:
+                f.write(f"[{timestamp}] Video generation failed.\n")
+                if error_message:
+                    f.write(f"Error details:\n{error_message}\n")
+        logger.info(f"Finalized progress file: success={success}")
+    else:
+        logger.warning(f"Could not finalize progress file (not found): {progress_file_path}")
+
 @app.route('/videos/<path:filename>')
 def serve_video(filename):
-    """Serve video files from the videos directory."""
+    """Serve video or progress files from the videos directory."""
     videos_dir = ensure_videos_directory()
+
+    # If filename doesn't end with .txt, check if a .txt version exists
+    if not filename.endswith('.txt'):
+        base_name = os.path.splitext(filename)[0]  # Remove any extension
+        txt_file = f"{base_name}.txt"
+        txt_path = os.path.join(videos_dir, txt_file)
+
+        if os.path.exists(txt_path):
+            logger.info(f"Serving progress file {txt_file} instead of video")
+            return send_from_directory(videos_dir, txt_file)
+
+    # If txt file doesn't exist or the request was specifically for a txt file,
+    # check for mp4 file if filename doesn't already specify .mp4
+    if not filename.endswith('.mp4'):
+        base_name = os.path.splitext(filename)[0]
+        mp4_file = f"{base_name}.mp4"
+        mp4_path = os.path.join(videos_dir, mp4_file)
+
+        if os.path.exists(mp4_path):
+            logger.info(f"Serving video file {mp4_file}")
+            return send_from_directory(videos_dir, mp4_file)
+
+    # If neither case matched or the requested file has the correct extension already,
+    # try to serve the file as-is
+    logger.info(f"Attempting to serve requested file {filename} as-is")
     return send_from_directory(videos_dir, filename)
 
 def cleanup_temp_dir(temp_dir):
@@ -419,14 +483,22 @@ def process_query():
         return jsonify({"error": "No query provided"}), 400
 
     query = data['query']
-    filename = data.get('filename', None)
+    filename = data.get('filename', f"animation_{int(time.time())}")
+
+    # Strip any file extension if present and ensure it's safe for filenames
+    filename = os.path.splitext(filename)[0]
+    # Replace any potentially problematic characters
+    filename = re.sub(r'[^\w\-_]', '_', filename)
 
     logger.info(f"Received query: {query}")
-    if filename:
-        logger.info(f"Requested filename: {filename}")
+    logger.info(f"Using filename: {filename}")
+
+    # Initialize progress file
+    progress_file_path = initialize_progress_file(filename)
 
     # Initial code generation
     code = generate_manim_code(query)
+    update_progress_file(progress_file_path, "Initial Manim code generated")
 
     # Try running the code, with retries for errors
     retry_count = 0
@@ -435,16 +507,19 @@ def process_query():
     MAX_OVERLAP_RETRIES = 3  # Maximum attempts to fix text overlap issues
 
     while retry_count < MAX_RETRIES:
+        update_progress_file(progress_file_path, f"Executing Manim code (attempt {retry_count+1}/{MAX_RETRIES})")
         result = run_manim_code(code, filename)
 
         if result["success"]:
-            logger.info("Manim code executed successfully")
+            update_progress_file(progress_file_path, "Manim code executed successfully")
 
             # Check for text overlap issues if the execution was successful
+            update_progress_file(progress_file_path, "Checking for text overlap issues...")
             has_overlap_issues, fixed_code, issues_found = check_text_overlap_issues(code)
 
             if has_overlap_issues and overlap_retry_count < MAX_OVERLAP_RETRIES:
-                logger.info(f"Text overlap issues found (attempt {overlap_retry_count+1}/{MAX_OVERLAP_RETRIES})")
+                update_progress_file(progress_file_path,
+                                    f"Text overlap issues found. Attempting fix (attempt {overlap_retry_count+1}/{MAX_OVERLAP_RETRIES})")
                 code = fixed_code
                 overlap_retry_count += 1
                 # Retry with the fixed code
@@ -455,8 +530,10 @@ def process_query():
 
         retry_count += 1
         logger.warning(f"Execution failed (attempt {retry_count}/{MAX_RETRIES})")
+        update_progress_file(progress_file_path, f"Execution failed (attempt {retry_count}/{MAX_RETRIES})")
 
         if retry_count >= MAX_RETRIES:
+            update_progress_file(progress_file_path, f"Max retries ({MAX_RETRIES}) reached, giving up")
             logger.error(f"Max retries ({MAX_RETRIES}) reached, giving up")
             break
 
@@ -465,12 +542,27 @@ def process_query():
         if result["error_log_path"] and os.path.exists(result["error_log_path"]):
             with open(result["error_log_path"], "r") as f:
                 error_log = f.read()
+            update_progress_file(progress_file_path, "Error detected. Generating improved code...")
 
         # Generate new code with the error log
         code = generate_manim_code(query, error_log)
+        update_progress_file(progress_file_path, "New code generated with error feedback")
 
     # Prepare response
     if result and result["success"]:
+        finalize_progress_file(progress_file_path, True)
+
+        # If video was successfully generated, replace the progress file with the video
+        videos_dir = ensure_videos_directory()
+        video_path = result.get("video_path")
+
+        if video_path and os.path.exists(video_path) and os.path.exists(progress_file_path):
+            try:
+                os.remove(progress_file_path)
+                logger.info(f"Removed progress file {progress_file_path} as video was successfully generated")
+            except Exception as e:
+                logger.error(f"Failed to remove progress file: {str(e)}")
+
         response = {
             "status": "success",
             "message": "Manim animation generated successfully",
@@ -482,11 +574,16 @@ def process_query():
             "installed_packages": result.get("installed_packages", [])
         }
     else:
+        # Finalize progress file with error details
+        error_message = result["stderr"] if result else "Unknown error"
+        finalize_progress_file(progress_file_path, False, error_message)
+
         response = {
             "status": "error",
             "message": f"Failed to generate Manim animation after {retry_count} attempts",
-            "error": result["stderr"] if result else "Unknown error",
+            "error": error_message,
             "last_code": code,
+            "progress_file": os.path.basename(progress_file_path),
             "installed_packages": result.get("installed_packages", []) if result else []
         }
 

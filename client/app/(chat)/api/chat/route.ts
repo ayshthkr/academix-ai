@@ -1,6 +1,6 @@
 import { convertToCoreMessages, Message, streamText } from "ai";
 import { z } from "zod";
-import { geminiProModel } from "@/ai";
+import { geminiFlashModel } from "@/ai";
 import { auth } from "@/app/(auth)/auth";
 import { deleteChatById, getChatById, saveChat } from "@/db/queries";
 
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   );
 
   const result = await streamText({
-    model: geminiProModel,
+    model: geminiFlashModel,
     system: `\n
       You are a helpful assistant who can generate animated videos using Manim animation library.
       You can help users create animated videos on receiving a query.

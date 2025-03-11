@@ -9,7 +9,7 @@
   "plugins": ["import", "tailwindcss"],
   "rules": {
     "tailwindcss/no-custom-classname": "off",
-    "tailwindcss/classnames-order": "off",
+    "tailwindcss/classnames-order": "off"
   },
   "settings": {
     "import/resolver": {

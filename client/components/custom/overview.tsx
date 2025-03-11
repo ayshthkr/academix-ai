@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageIcon, VercelIcon } from "./icons";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export const Overview = () => {
   return (
@@ -20,6 +22,9 @@ export const Overview = () => {
         <p>
           Welcome to Academix. Start by generating some classes or by chatting
         </p>
+      <Button variant={'outline'} className="mx-auto">
+        <Link href={'/generate-class'}>Generate a Class</Link>
+      </Button>
       </div>
     </motion.div>
   );
