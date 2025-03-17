@@ -27,8 +27,8 @@ const suggestedActions = [
   },
   {
     title: "Help me code a binary tree",
-    label: "with at least 10 notes",
-    action: "Help me code a binary tree with at least 10 notes.",
+    label: "with at least 10 nodes",
+    action: "Help me code a binary tree with at least 10 nodes.",
   },
 ];
 

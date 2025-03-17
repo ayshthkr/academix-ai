@@ -42,16 +42,28 @@ export function Chat({
         >
           {messages.length === 0 && <Overview />}
 
-          {messages.map((message) => (
+          {messages
+            .filter(message => !message.toolInvocations || message.toolInvocations.length === 0)
+            .map((message) => (
+              <PreviewMessage
+                key={message.id}
+                chatId={id}
+                role={message.role}
+                content={message.content}
+                attachments={message.experimental_attachments}
+                toolInvocations={message.toolInvocations}
+              />
+            ))}
+
+          {isLoading && (
             <PreviewMessage
-              key={message.id}
               chatId={id}
-              role={message.role}
-              content={message.content}
-              attachments={message.experimental_attachments}
-              toolInvocations={message.toolInvocations}
+              role="assistant"
+              content=""
+              toolInvocations={undefined}
+              isLoading={true}
             />
-          ))}
+          )}
 
           <div
             ref={messagesEndRef}
@@ -59,7 +71,7 @@ export function Chat({
           />
         </div>
 
-        <form className="flex flex-row gap-2 relative items-end w-full md:max-w-[500px] max-w-[calc(100dvw-32px) px-4 md:px-0">
+        <form className="flex flex-row gap-2 relative items-end w-full md:max-w-[40%] max-w-[calc(100dvw-32px) px-4 md:px-0">
           <MultimodalInput
             input={input}
             setInput={setInput}

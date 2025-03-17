@@ -589,6 +589,159 @@ def process_query():
 
     return jsonify(response)
 
+def check_code_safety(code):
+    """Check if the provided Python code is safe to execute using Gemini API."""
+    prompt = f"""
+    You are a code safety validator. Please analyze the following Python code
+    and determine if it's safe to execute. Focus on detecting:
+
+    1. System commands that could harm the host system (shell commands, os.system calls)
+    2. File operations that could delete or modify important files outside allowed directories
+    3. Network operations that could be malicious (unauthorized connections, data exfiltration)
+    4. Import of potentially dangerous modules (subprocess with shell=True, etc.)
+    5. Any other potentially harmful operations
+
+    Code to analyze:
+    ```python
+    {code}
+    ```
+
+    Reply ONLY with either "SAFE" or "UNSAFE: <reason>" where <reason> briefly explains
+    the security concern.
+    """
+
+    logger.info("Checking code safety with Gemini API")
+    try:
+        response = review_model.generate_content(prompt)
+        safety_result = response.text.strip()
+
+        if safety_result.startswith("SAFE"):
+            return True, "Code validated as safe"
+        else:
+            # Extract reason if it exists
+            reason = safety_result[7:] if safety_result.startswith("UNSAFE:") else safety_result
+            return False, f"Code safety check failed: {reason}"
+    except Exception as e:
+        logger.error(f"Error during code safety check: {str(e)}")
+        return False, f"Error during code safety check: {str(e)}"
+
+def execute_safe_code(code):
+    """Execute Python code in a controlled environment and return the result."""
+    # Create a temporary directory for execution
+    temp_dir = tempfile.mkdtemp()
+    file_path = os.path.join(temp_dir, "code_to_execute.py")
+    output_path = os.path.join(temp_dir, "output.txt")
+    error_path = os.path.join(temp_dir, "error.txt")
+
+    logger.info(f"Created temporary directory for code execution: {temp_dir}")
+
+    try:
+        # Write the code to a file
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(code)
+
+        # Create a command that redirects stdout and stderr to files
+        cmd = f"{sys.executable} {file_path} > {output_path} 2> {error_path}"
+
+        # Execute the code with timeout
+        process = subprocess.Popen(cmd, shell=True)
+        try:
+            process.wait(timeout=30)  # 30 seconds timeout
+
+            # Read the output and errors
+            output = ""
+            error = ""
+
+            if os.path.exists(output_path):
+                with open(output_path, "r", encoding="utf-8") as f:
+                    output = f.read()
+
+            if os.path.exists(error_path):
+                with open(error_path, "r", encoding="utf-8") as f:
+                    error = f.read()
+
+            return {
+                "success": process.returncode == 0,
+                "output": output,
+                "error": error if error else None,
+                "return_code": process.returncode
+            }
+
+        except subprocess.TimeoutExpired:
+            process.kill()
+            return {
+                "success": False,
+                "output": "",
+                "error": "Execution timed out after 30 seconds",
+                "return_code": -1
+            }
+
+    except Exception as e:
+        logger.error(f"Error during code execution: {str(e)}")
+        return {
+            "success": False,
+            "output": "",
+            "error": f"Error during execution: {str(e)}",
+            "return_code": -1
+        }
+
+    finally:
+        # Clean up the temporary directory
+        cleanup_temp_dir(temp_dir)
+
+@app.route('/code', methods=['POST'])
+def process_code():
+    """Process Python code, check its safety, and execute if safe."""
+    data = request.json
+
+    if not data or 'code' not in data:
+        logger.error("No code provided")
+        return jsonify({"error": "No code provided"}), 400
+
+    code = data['code']
+
+    if not code or not isinstance(code, str):
+        logger.error("Invalid code format")
+        return jsonify({"error": "Invalid code format"}), 400
+
+    logger.info("Received code execution request")
+
+    # Step 1: Check if the code is safe to execute
+    is_safe, safety_message = check_code_safety(code)
+
+    if not is_safe:
+        logger.warning(f"Code safety check failed: {safety_message}")
+        return jsonify({
+            "status": "error",
+            "message": "Code safety check failed",
+            "details": safety_message
+        }), 400
+
+    logger.info("Code passed safety check, executing")
+
+    # Step 2: Execute the code if it's safe
+    result = execute_safe_code(code)
+
+    if result["success"]:
+        logger.info("Code executed successfully")
+        response = {
+            "status": "success",
+            "message": "Code executed successfully",
+            "output": result["output"],
+            "return_code": result["return_code"]
+        }
+    else:
+        logger.warning(f"Code execution failed: {result['error']}")
+        response = {
+            "status": "error",
+            "message": "Code execution failed",
+            "error": result["error"],
+            "output": result["output"],
+            "return_code": result["return_code"]
+        }
+
+    return jsonify(response)
+
 if __name__ == '__main__':
     # Check if Manim is installed
     try:

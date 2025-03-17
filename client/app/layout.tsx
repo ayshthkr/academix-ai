@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Toaster } from "sonner";
+import NextTopLoader from 'nextjs-toploader';
 
 import { Navbar } from "@/components/custom/navbar";
 import { ThemeProvider } from "@/components/custom/theme-provider";
@@ -18,7 +19,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
         <ThemeProvider
           attribute="class"
@@ -26,6 +27,7 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NextTopLoader />
           <Toaster position="top-center" />
           <Navbar />
           {children}

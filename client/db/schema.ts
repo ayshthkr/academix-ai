@@ -8,6 +8,7 @@ import {
   uuid,
   text,
   integer,
+  primaryKey,
 } from "drizzle-orm/pg-core";
 
 export const user = pgTable("User", {
@@ -48,6 +49,21 @@ export const class_ = pgTable("Class", {
 });
 
 export type Class = InferSelectModel<typeof class_>;
+
+// ClassEnrollment schema for tracking student enrollments
+export const classEnrollment = pgTable("ClassEnrollment", {
+  id: uuid("id").primaryKey().notNull().defaultRandom(),
+  classId: varchar("classId", { length: 8 })
+    .notNull()
+    .references(() => class_.id, { onDelete: "cascade" }),
+  userId: uuid("userId")
+    .notNull()
+    .references(() => user.id, { onDelete: "cascade" }),
+  role: varchar("role", { length: 20 }).notNull().default("student"),
+  joinedAt: timestamp("joinedAt").notNull().defaultNow(),
+});
+
+export type ClassEnrollment = InferSelectModel<typeof classEnrollment>;
 
 // WeekPlan schema for storing week-by-week content
 export const weekPlan = pgTable("WeekPlan", {

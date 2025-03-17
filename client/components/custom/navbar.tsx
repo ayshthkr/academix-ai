@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-import { handleSignOut } from "@/app/actions"; // Import the server action
 import { History } from "./history";
 import { SlashIcon } from "./icons";
 import { ThemeToggle } from "./theme-toggle";
@@ -28,6 +29,7 @@ export const Navbar = () => {
   }
 
   const [session, setSession] = useState<Session | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     // Fetch the session on the client side
@@ -53,14 +55,14 @@ export const Navbar = () => {
             <div className="text-zinc-500">
               <SlashIcon size={16} />
             </div>
-            <div className="text-sm dark:text-zinc-300 truncate w-28 md:w-fit">
-              Academix
-            </div>
+            <Link href={"/"}>
+              <div className="text-sm dark:text-zinc-300 truncate w-28 md:w-fit hover:underline">
+                Academix
+              </div>
+            </Link>
 
             {/* Add the class dropdown only for logged in users */}
-            {session?.user?.id && (
-              <ClassDropdown userId={session.user.id} />
-            )}
+            {session?.user?.id && <ClassDropdown userId={session.user.id} />}
           </div>
         </div>
 
@@ -79,17 +81,15 @@ export const Navbar = () => {
                 <ThemeToggle />
               </DropdownMenuItem>
               <DropdownMenuItem className="p-1 z-50">
-                <form
-                  className="w-full"
-                  action={handleSignOut} // Use the imported server action
+                <button
+                  className="w-full text-left px-1 py-0.5 text-red-500"
+                  onClick={() => {
+                    signOut();
+                    router.push("/");
+                  }}
                 >
-                  <button
-                    type="submit"
-                    className="w-full text-left px-1 py-0.5 text-red-500"
-                  >
-                    Sign out
-                  </button>
-                </form>
+                  Sign out
+                </button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

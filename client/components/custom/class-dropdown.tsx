@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { ChevronsUpDown, Loader2, UserIcon, GraduationCapIcon } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +14,7 @@ import { SlashIcon } from "./icons";
 interface Class {
   id: string;
   title: string;
+  role: string; // Add role field to identify owner vs student
 }
 
 interface ClassDropdownProps {
@@ -27,12 +28,12 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
   const pathname = usePathname();
 
   // Extract class ID from pathname if we're on a class page
-  const currentClassId = pathname?.startsWith('/class/')
-    ? pathname.replace('/class/', '')
+  const currentClassId = pathname?.startsWith("/class/")
+    ? pathname.replace("/class/", "")
     : null;
 
   // Find the current class object based on ID
-  const currentClass = classes.find(c => c.id === currentClassId);
+  const currentClass = classes.find((c) => c.id === currentClassId);
 
   useEffect(() => {
     const fetchClasses = async () => {
@@ -61,7 +62,7 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
   // Helper function to truncate text
   const truncateText = (text: string, maxLength: number = 25) => {
     if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength) + '...';
+    return text.substring(0, maxLength) + "...";
   };
 
   return (
@@ -74,7 +75,13 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
           <div className="text-sm dark:text-zinc-300 flex items-center gap-1 max-w-[150px]">
             {/* Show truncated class name if on a class page, otherwise show "Class" */}
             <span className="truncate">
-              {currentClass ? truncateText(currentClass.title, 20) : "Select a Class"}
+              {currentClass ? (
+                truncateText(currentClass.title, 20)
+              ) : (
+                <span className="flex gap-1">
+                  Select a Class <ChevronsUpDown size={14} />
+                </span>
+              )}
             </span>
             {loading && <Loader2 className="size-3 animate-spin shrink-0" />}
           </div>
@@ -86,12 +93,25 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
             <DropdownMenuItem
               key={cls.id}
               onClick={() => router.push(`/class/${cls.id}`)}
-              className={`cursor-pointer flex flex-col items-start ${cls.id === currentClassId ? 'bg-secondary/50 font-medium' : ''}`}
+              className={`cursor-pointer flex flex-row items-start justify-between ${
+                cls.id === currentClassId ? "bg-secondary/50 font-medium" : ""
+              }`}
             >
               {/* Format as truncated classname - classcode with proper wrapping */}
               <div className="w-full">
                 <div className="truncate">{truncateText(cls.title, 30)}</div>
-                <span className="text-xs text-muted-foreground font-mono truncate">{cls.id}</span>
+                <span className="text-xs text-muted-foreground font-mono truncate">
+                  {cls.id}
+                </span>
+              </div>
+
+              {/* Role indicator icon */}
+              <div className="ml-2 text-muted-foreground pt-1">
+                {cls.role === 'owner' ? (
+                  <GraduationCapIcon size={14} className="text-primary" />
+                ) : (
+                  <UserIcon size={14} />
+                )}
               </div>
             </DropdownMenuItem>
           ))
@@ -101,7 +121,7 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
           </DropdownMenuItem>
         )}
         <DropdownMenuItem
-          onClick={() => router.push('/generate-class')}
+          onClick={() => router.push("/generate-class")}
           className="font-medium text-primary cursor-pointer border-t mt-1 pt-1"
         >
           Create New Class
@@ -110,4 +130,3 @@ export function ClassDropdown({ userId }: ClassDropdownProps) {
     </DropdownMenu>
   );
 }
-

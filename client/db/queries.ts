@@ -1,19 +1,21 @@
 import "server-only";
 
 import { genSaltSync, hashSync } from "bcrypt-ts";
-import { and, desc, eq } from "drizzle-orm";
+import { and, desc, eq, ne, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
-import { user, chat, User, class_, weekPlan } from "./schema";
+import { user, chat, User, class_, weekPlan, classEnrollment } from "./schema";
 import { WeekPlan } from "@/app/types";
 import { auth } from "@/app/(auth)/auth";
+
+import * as schema from "./schema";
 
 // Optionally, if not using email/pass login, you can
 // use the Drizzle adapter for Auth.js / NextAuth
 // https://authjs.dev/reference/adapter/drizzle
 let client = postgres(`${process.env.POSTGRES_URL!}?sslmode=require`);
-export let db = drizzle(client);
+export let db = drizzle(client, { schema });
 
 export async function getUser(email: string): Promise<Array<User>> {
   try {
@@ -199,7 +201,13 @@ export async function saveClassAndWeeks(
   }
 }
 
-export async function getClassWithWeeks({ classId, userId }: { classId: string; userId: string | undefined }) {
+export async function getClassWithWeeks({
+  classId,
+  userId,
+}: {
+  classId: string;
+  userId: string | undefined;
+}) {
   try {
     // First, get the class data and verify ownership
     const [classData] = await db
@@ -224,21 +232,25 @@ export async function getClassWithWeeks({ classId, userId }: { classId: string; 
       .orderBy(weekPlan.weekNumber);
 
     // Parse the topics JSON field for each week plan
-    const processedWeekPlans = weekPlans.map(week => ({
+    const processedWeekPlans = weekPlans.map((week) => ({
       ...week,
-      topics: typeof week.topics === 'string' ? JSON.parse(week.topics) : week.topics
+      topics:
+        typeof week.topics === "string" ? JSON.parse(week.topics) : week.topics,
     }));
 
     return {
       success: true,
       classData,
-      weekPlans: processedWeekPlans
+      weekPlans: processedWeekPlans,
     };
   } catch (error) {
     console.error("Failed to get class with week plans:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : "Failed to retrieve class data"
+      error:
+        error instanceof Error
+          ? error.message
+          : "Failed to retrieve class data",
     };
   }
 }
@@ -359,16 +371,32 @@ export async function updateClassWithWeekPlans(
 
 export async function getUserClasses(userId: string) {
   try {
-    // Fetch classes associated with the user
-    const classes = await db.select({
-      id: class_.id,
-      title: class_.title,
-    })
-    .from(class_)
-    .where(eq(class_.userId, userId))
-    .orderBy(desc(class_.createdAt));
+    const ownedClasses = await db
+      .select({
+        id: class_.id,
+        title: class_.title,
+      })
+      .from(class_)
+      .where(eq(class_.userId, userId));
 
-    return classes;
+    const ownedClassesWithRole = ownedClasses.map((classItem) => ({
+      ...classItem,
+      role: "owner",
+    }));
+
+    const enrolledClasses = await db
+      .select({
+        id: classEnrollment.classId,
+        title: class_.title,
+        role: classEnrollment.role,
+      })
+      .from(classEnrollment)
+      .innerJoin(class_, eq(classEnrollment.classId, class_.id))
+      .where(
+        and(eq(classEnrollment.userId, userId), ne(class_.userId, userId))
+      );
+
+    return [...ownedClassesWithRole, ...enrolledClasses];
   } catch (error) {
     console.error("Failed to get user classes:", error);
     throw error;
