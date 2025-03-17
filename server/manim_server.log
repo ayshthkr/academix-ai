@@ -9073,3 +9073,283 @@ List:
 2025-03-11 21:35:10,393 - __main__ - INFO - Manim is installed and available
 2025-03-11 21:35:10,403 - werkzeug - WARNING -  * Debugger is active!
 2025-03-11 21:35:10,404 - werkzeug - INFO -  * Debugger PIN: 976-575-834
+2025-03-14 22:21:56,135 - __main__ - INFO - Manim is installed and available
+2025-03-14 22:21:56,162 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-14 22:21:56,162 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 22:21:56,171 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-14 22:21:57,561 - __main__ - INFO - Manim is installed and available
+2025-03-14 22:21:57,570 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 22:21:57,570 - werkzeug - INFO -  * Debugger PIN: 106-084-183
+2025-03-15 11:22:45,611 - __main__ - INFO - Manim is installed and available
+2025-03-15 11:22:45,620 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-15 11:22:45,620 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-15 11:22:45,623 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-15 11:22:46,487 - __main__ - INFO - Manim is installed and available
+2025-03-15 11:22:46,491 - werkzeug - WARNING -  * Debugger is active!
+2025-03-15 11:22:46,492 - werkzeug - INFO -  * Debugger PIN: 729-188-172
+2025-03-17 20:16:55,832 - __main__ - INFO - Manim is installed and available
+2025-03-17 20:16:55,841 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:16:55,841 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 20:16:55,845 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-17 20:16:56,584 - __main__ - INFO - Manim is installed and available
+2025-03-17 20:16:56,589 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 20:16:56,589 - werkzeug - INFO -  * Debugger PIN: 288-153-396
+2025-03-17 20:58:16,746 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:16,748 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:16,749 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:17,781 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-17 20:58:19,697 - __main__ - INFO - Manim is installed and available
+2025-03-17 20:58:19,710 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 20:58:19,710 - werkzeug - INFO -  * Debugger PIN: 445-807-679
+2025-03-17 20:58:23,401 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:23,402 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:23,403 - werkzeug - INFO -  * Detected change in '/home/ayush/coding/novalabs/server/file.py', reloading
+2025-03-17 20:58:23,932 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-17 20:58:25,356 - __main__ - INFO - Manim is installed and available
+2025-03-17 20:58:25,361 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 20:58:25,361 - werkzeug - INFO -  * Debugger PIN: 586-166-847
+2025-03-17 21:00:51,393 - __main__ - INFO - Received code execution request
+2025-03-17 21:00:51,393 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 21:00:54,299 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 21:00:54,299 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmprtwpdu5n
+2025-03-17 21:00:54,315 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmprtwpdu5n
+2025-03-17 21:00:54,315 - __main__ - INFO - Code executed successfully
+2025-03-17 21:00:54,315 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 21:00:54] "POST /code HTTP/1.1" 200 -
+2025-03-17 21:07:25,682 - __main__ - INFO - Received code execution request
+2025-03-17 21:07:25,682 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 21:07:27,754 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 21:07:27,755 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpuw5z1688
+2025-03-17 21:07:27,787 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpuw5z1688
+2025-03-17 21:07:27,787 - __main__ - INFO - Code executed successfully
+2025-03-17 21:07:27,788 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 21:07:27] "POST /code HTTP/1.1" 200 -
+2025-03-17 21:09:14,096 - __main__ - INFO - Received code execution request
+2025-03-17 21:09:14,097 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 21:09:16,170 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 21:09:16,170 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmp_8tzv5th
+2025-03-17 21:09:16,204 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp_8tzv5th
+2025-03-17 21:09:16,204 - __main__ - INFO - Code executed successfully
+2025-03-17 21:09:16,204 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 21:09:16] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:44:03,979 - __main__ - INFO - Manim is installed and available
+2025-03-17 22:44:03,993 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 22:44:03,993 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 22:44:03,999 - werkzeug - INFO -  * Restarting with watchdog (inotify)
+2025-03-17 22:44:05,454 - __main__ - INFO - Manim is installed and available
+2025-03-17 22:44:05,463 - werkzeug - WARNING -  * Debugger is active!
+2025-03-17 22:44:05,466 - werkzeug - INFO -  * Debugger PIN: 100-450-199
+2025-03-17 22:48:03,932 - __main__ - INFO - Received code execution request
+2025-03-17 22:48:03,932 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:48:06,438 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:48:06,440 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpv1u_nede
+2025-03-17 22:48:06,473 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpv1u_nede
+2025-03-17 22:48:06,473 - __main__ - INFO - Code executed successfully
+2025-03-17 22:48:06,475 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:48:06] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:27,820 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:27,820 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:30,104 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:30,105 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpvza8k6e8
+2025-03-17 22:55:30,171 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpvza8k6e8
+2025-03-17 22:55:30,171 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:30,172 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:30] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:31,469 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:31,470 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:33,658 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:33,659 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmp5fcpt20t
+2025-03-17 22:55:33,694 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp5fcpt20t
+2025-03-17 22:55:33,694 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:33,694 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:33] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:34,705 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:34,705 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:35,405 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:35,407 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpmnyefvqa
+2025-03-17 22:55:35,440 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpmnyefvqa
+2025-03-17 22:55:35,440 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:35,441 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:35] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:37,531 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:37,531 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:38,144 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:38,145 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpzfpzh142
+2025-03-17 22:55:38,180 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpzfpzh142
+2025-03-17 22:55:38,181 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:38,181 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:38] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:39,111 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:39,111 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:39,700 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:39,701 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpegg4trmx
+2025-03-17 22:55:39,768 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpegg4trmx
+2025-03-17 22:55:39,768 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:39,769 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:39] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:40,971 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:40,972 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:41,541 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:41,542 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpu03g4ku3
+2025-03-17 22:55:41,575 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpu03g4ku3
+2025-03-17 22:55:41,575 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:41,576 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:41] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:42,864 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:42,864 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:43,577 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:43,578 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpkosqd3x8
+2025-03-17 22:55:43,612 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpkosqd3x8
+2025-03-17 22:55:43,613 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:43,614 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:43] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:44,524 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:44,524 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:45,144 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:55:45,144 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpr57zl0ii
+2025-03-17 22:55:45,177 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpr57zl0ii
+2025-03-17 22:55:45,177 - __main__ - INFO - Code executed successfully
+2025-03-17 22:55:45,178 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:45] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:55:48,601 - __main__ - INFO - Received code execution request
+2025-03-17 22:55:48,602 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:55:49,009 - __main__ - ERROR - Error during code safety check: 429 Resource has been exhausted (e.g. check quota).
+2025-03-17 22:55:49,009 - __main__ - WARNING - Code safety check failed: Error during code safety check: 429 Resource has been exhausted (e.g. check quota).
+2025-03-17 22:55:49,009 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:55:49] "[31m[1mPOST /code HTTP/1.1[0m" 400 -
+2025-03-17 22:57:09,571 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:09,572 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:09,955 - __main__ - ERROR - Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:09,955 - __main__ - WARNING - Code safety check failed: Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:09,956 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:09] "[31m[1mPOST /code HTTP/1.1[0m" 400 -
+2025-03-17 22:57:10,902 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:10,903 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:11,209 - __main__ - ERROR - Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:11,209 - __main__ - WARNING - Code safety check failed: Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:11,211 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:11] "[31m[1mPOST /code HTTP/1.1[0m" 400 -
+2025-03-17 22:57:13,513 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:13,514 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:14,176 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:14,177 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpcm8e1of7
+2025-03-17 22:57:14,244 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpcm8e1of7
+2025-03-17 22:57:14,245 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:14,246 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:14] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:15,206 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:15,206 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:15,845 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:15,846 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmp8t_ve4v8
+2025-03-17 22:57:15,963 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmp8t_ve4v8
+2025-03-17 22:57:15,965 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:15,966 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:15] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:16,967 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:16,968 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:17,580 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:17,580 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmps8s1iv6k
+2025-03-17 22:57:17,647 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmps8s1iv6k
+2025-03-17 22:57:17,647 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:17,648 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:17] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:19,034 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:19,035 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:19,668 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:19,669 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmphxi2t9iz
+2025-03-17 22:57:19,704 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmphxi2t9iz
+2025-03-17 22:57:19,705 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:19,705 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:19] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:20,619 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:20,620 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:21,131 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:21,131 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpn7zy7ncl
+2025-03-17 22:57:21,198 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpn7zy7ncl
+2025-03-17 22:57:21,198 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:21,199 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:21] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:22,656 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:22,656 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:23,220 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:23,220 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmpkpfn__oj
+2025-03-17 22:57:23,254 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmpkpfn__oj
+2025-03-17 22:57:23,254 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:23,255 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:23] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:24,424 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:24,426 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:25,135 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:25,136 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmphhny13y0
+2025-03-17 22:57:25,203 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmphhny13y0
+2025-03-17 22:57:25,204 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:25,206 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:25] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:26,118 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:26,119 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:26,771 - __main__ - INFO - Code passed safety check, executing
+2025-03-17 22:57:26,771 - __main__ - INFO - Created temporary directory for code execution: /tmp/tmped2ag21c
+2025-03-17 22:57:26,805 - __main__ - INFO - Cleaned up temporary directory: /tmp/tmped2ag21c
+2025-03-17 22:57:26,806 - __main__ - INFO - Code executed successfully
+2025-03-17 22:57:26,806 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:26] "POST /code HTTP/1.1" 200 -
+2025-03-17 22:57:27,721 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:27,721 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:28,137 - __main__ - ERROR - Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:28,137 - __main__ - WARNING - Code safety check failed: Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:28,138 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:28] "[31m[1mPOST /code HTTP/1.1[0m" 400 -
+2025-03-17 22:57:39,870 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:39,871 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:40,245 - __main__ - ERROR - Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:40,246 - __main__ - WARNING - Code safety check failed: Error during code safety check: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key expired. Please renew the API key."
+]
+2025-03-17 22:57:40,247 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:40] "[31m[1mPOST /code HTTP/1.1[0m" 400 -
+2025-03-17 22:57:41,161 - __main__ - INFO - Received code execution request
+2025-03-17 22:57:41,162 - __main__ - INFO - Checking code safety with Gemini API
+2025-03-17 22:57:41,501 - __main__ - ERROR - Error during code safety check: 429 Resource has been exhausted (e.g. check quota).
+2025-03-17 22:57:41,502 - __main__ - WARNING - Code safety check failed: Error during code safety check: 429 Resource has been exhausted (e.g. check quota).
+2025-03-17 22:57:41,502 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 22:57:41] "[31m[1mPOST /code HTTP/1.1[0m" 400 -

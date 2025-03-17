@@ -4,6 +4,8 @@ import { geminiFlashModel } from "@/ai";
 import { generateObject } from "ai";
 import { ClassFormSchema, WeekPlan, WeekPlanSchema } from "./types";
 import { signOut } from "@/app/(auth)/auth";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function generateWeekPlans(formData: unknown) {
   try {
@@ -34,9 +36,10 @@ export async function generateWeekPlans(formData: unknown) {
     // Use generateObject to directly get structured data from the AI
     const { object } = await generateObject({
       model: geminiFlashModel,
-      output: 'array',
+      output: "array",
       schema: WeekPlanSchema,
-      system: "You are an expert educational curriculum designer. Create detailed, practical, and engaging weekly plans for courses with structured topics. Your response should have each week contain multiple topics of different types (content, assignment, reading, lecture, discussion).",
+      system:
+        "You are an expert educational curriculum designer. Create detailed, practical, and engaging weekly plans for courses with structured topics. Your response should have each week contain multiple topics of different types (content, assignment, reading, lecture, discussion).",
       prompt: prompt,
       maxTokens: 4000,
       temperature: 0.7,
@@ -56,21 +59,24 @@ export async function generateWeekPlans(formData: unknown) {
               id: `topic-${i}-1`,
               type: "lecture",
               title: "Introduction to the Topic",
-              description: "An overview of this week's material and key concepts."
+              description:
+                "An overview of this week's material and key concepts.",
             },
             {
               id: `topic-${i}-2`,
               type: "reading",
               title: "Essential Readings",
-              description: "Chapter 1 of the textbook and supplementary articles."
+              description:
+                "Chapter 1 of the textbook and supplementary articles.",
             },
             {
               id: `topic-${i}-3`,
               type: "assignment",
               title: "Reflection Exercise",
-              description: "Write a 500-word reflection on the key concepts from this week."
-            }
-          ]
+              description:
+                "Write a 500-word reflection on the key concepts from this week.",
+            },
+          ],
         });
       }
       return { success: true, weekPlans: fallbackPlans };
@@ -85,21 +91,21 @@ export async function generateWeekPlans(formData: unknown) {
             id: `topic-${index}-1`,
             type: "content",
             title: "Module Content",
-            description: "Learning materials for this week."
+            description: "Learning materials for this week.",
           },
           {
             id: `topic-${index}-2`,
             type: "assignment",
             title: "Weekly Assignment",
-            description: "Complete the exercises related to this week's topic."
-          }
+            description: "Complete the exercises related to this week's topic.",
+          },
         ];
       }
 
       // Make sure all topics have IDs
       week.topics = week.topics.map((topic, tIdx) => ({
         ...topic,
-        id: topic.id || `topic-${index}-${tIdx}`
+        id: topic.id || `topic-${index}-${tIdx}`,
       }));
 
       return {
@@ -120,10 +126,4 @@ export async function generateWeekPlans(formData: unknown) {
           : "Failed to generate week plans",
     };
   }
-}
-
-export async function handleSignOut() {
-  await signOut({
-    redirectTo: "/",
-  });
 }
